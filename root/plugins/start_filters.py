@@ -12,17 +12,21 @@ import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_message(filters.command("help"))
-async def help_user(c,m):
+@Client.on_message(filters.command("start"))
+async def start_msg(c,m):
+  button = [[
+               InlineKeyboardButton("HELP", {Config.HELP_USER}")
+             ]]
+    markup = InlineKeyboardMarkup(button)
     try:
-       await m.reply_text(Translation.HELP_USER,quote=True)
+       await m.reply_text(text=Translation.HELP_USER,quote=True,reply_markup=markup,disable_web_page_preview=True)
     except Exception as e:
-        log.info(str(e))
-        
+        log.info(str(e))                                
+  
 @Client.on_message(filters.command("start"))
 async def start_msg(c,m):
     button = [[
-               InlineKeyboardButton("HELP", {messages.HELP_USER}")
+               InlineKeyboardButton("Ur Crush  (≧∇≦)ﾉ", url=f"https://t.me/{Config.OWNER_USERNAME}")
              ]]
     markup = InlineKeyboardMarkup(button) 
     try:
