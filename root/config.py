@@ -11,9 +11,4 @@ class Config(object):
   OWNER_ID = [int(i) for i in os.environ.get("OWNER_ID", "").split(" ")]
   OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "")
   CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION",False)
-  HELP_USER = os.environ.get("""**TF Does This Bot Do?**
-    
-**⁘  ¯\_(ツ)_/¯ Nothing. Ha Ha Ha**
-**⁘  No,Seriously Tho (•_•)**
 
-""")
