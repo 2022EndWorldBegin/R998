@@ -15,7 +15,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_message(filters.command("start"))
 async def start_msg(c,m):
   button = [[
-               InlineKeyboardButton("HELP", {Config.HELP_USER}")
+               InlineKeyboardButton("HELP", url={Config.HELP_USER}")
              ]]
     markup = InlineKeyboardMarkup(button)
     try:
